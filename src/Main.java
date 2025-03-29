@@ -1,12 +1,11 @@
-import models.Aluno;
-import models.Escola;
-import models.Professor;
+import models.*;
+
+import java.util.ArrayList;
 
 public class Main {
     public static void main(String[] args) {
 
-
-        Escola escola =new Escola("Escola Senai");
+        Escola escola = new Escola("Escola Senai");
 
         Aluno aluno1 = new Aluno("Carlos Silva", 15, "A123");
         Aluno aluno2 = new Aluno("Mariana Souza", 16, "A456");
@@ -29,7 +28,17 @@ public class Main {
         escola.adicionarProfessor(professor4);
 
         escola.listaDeAlunos();
+        System.out.println("----------------------------------------------------------------------------------------");
         escola.listaDeProfessores();
+        System.out.println("----------------------------------------------------------------------------------------");
 
+        // Criando uma turma com alunos
+        Turma turma = new Turma("Turma A", 2025, professor1, new ArrayList<>());
+        turma.getAlunos().add(aluno1);
+        turma.getAlunos().add(aluno2);
+
+        // Criando disciplina
+        Disciplina disciplina = new Disciplina("Matemática", 60, professor1);
+        System.out.println("Disciplina: " + disciplina.getNome() + ", Professor: " + disciplina.getProfessor().getNomeProfessor());
     }
 }
