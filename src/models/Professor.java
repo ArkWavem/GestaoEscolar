@@ -9,8 +9,9 @@ public class Professor {
         this.idadeProfessor = idadeProfessor;
     }
 
-    public Professor(String nomeProfessor, String disciplinaProfessor) {
+    public Professor(String nomeProfessor, int idadeProfessor, String disciplinaProfessor) {
         this.nomeProfessor = nomeProfessor;
+        this.idadeProfessor = idadeProfessor;
         this.disciplinaProfessor = disciplinaProfessor;
     }
 
